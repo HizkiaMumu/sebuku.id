@@ -1,5 +1,7 @@
 {
   "name": "Sebuku",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

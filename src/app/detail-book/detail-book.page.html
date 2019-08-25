@@ -1,0 +1,96 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button (click)="this.pushCartPage()">
+        <ion-icon slot="icon-only" name="ios-cart" style="font-size: 23px;"></ion-icon>
+      </ion-button>
+      <span color="danger" class="icon-badge">2</span>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div padding>
+    <div class="book-area">
+      <img src="assets/images/cover-1.jpg" width="30%" height="auto" class="book-cover">
+      <h5 class="book-title">The subtle art of not giving a fuck</h5>
+      <h6 class="book-category">Self development</h6>
+      <h6 class="book-price">Rp 20.000 / hari</h6>
+      <p class="book-synopsis">Subtlety #1: Not giving a fuck is not about being indifferent. It just means you're comfortable with being different. Don't say fuck it to everything in life, just to the unimportant things. Subtlety #2: To not give a fuck about adversity, you must first care about something more important than adversity.</p>
+    </div>
+    <!-- <div class="separator-line"></div> -->
+    <div class="detail-area">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="about-button" [ngClass]="this.aboutBook ? 'active-tab' : ''" (click)="this.showAboutBook()">
+            Tentang buku
+          </ion-col>
+          <ion-col class="owner-button" [ngClass]="this.bookOwner ? 'active-tab' : ''" (click)="this.showBookOwner()">
+            Pemilik buku
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+      <div class="about-book" *ngIf="this.aboutBook">
+        <ion-grid class="info-area">
+          <ion-row>
+            <ion-col>
+              <h5 class="info-title">Kondisi</h5>
+              <h5 class="info-description">Baik</h5>
+            </ion-col>
+            <ion-col>
+              <h5 class="info-title">Halaman</h5>
+              <h5 class="info-description">256</h5>
+            </ion-col>
+            <ion-col>
+              <h5 class="info-title">Cover</h5>
+              <h5 class="info-description">Hardcover</h5>
+            </ion-col>
+            <ion-col>
+              <h5 class="info-title">Bahasa</h5>
+              <h5 class="info-description">Indonesia</h5>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <div class="description-area">
+          <h5 class="description-title">Deskripsi</h5>
+          <p class="book-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+      </div>
+      <div class="book-owner" *ngIf="this.bookOwner">
+        <ion-grid>
+          <ion-row>
+            <ion-col size="4">
+              <img src="https://i1.wp.com/ppmschool.ac.id/id/wp-content/uploads/2016/01/tutor-8.jpg" width="100%" height="auto" class="owner-profile">
+            </ion-col>
+            <ion-col>
+              <h6 class="owner-name">Hizkia Mumu</h6>
+              <h6 class="owner-area">Balikpapan Utara</h6>
+              <h6 class="owner-books">
+                <ion-icon name="bookmarks" style="margin-bottom: -1px;"></ion-icon>
+                13 buku
+              </h6>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+  </div>
+
+  <div class="action-buttons">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <ion-button color="blue" class="action-button" expand="block" fill="outline">Beli Buku</ion-button>
+        </ion-col>
+        <ion-col>
+          <ion-button color="blue" class="action-button" expand="block">Sewa Buku</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+</ion-content>

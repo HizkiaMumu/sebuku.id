@@ -1,0 +1,147 @@
+.icon-badge {
+  font-size: 10px !important;
+  margin: -15px 10px 0px -20px;
+  border-radius: 100px;
+  background: rgb(247, 33, 65);
+  color: #fff;
+  padding: 1px 5px;
+  font-weight: 600;
+  z-index: 1000;
+}
+
+.book-area {
+  text-align: center;
+  margin: 15px 0px;
+}
+
+.book-cover {
+  margin: 0px 0px 10px 0px;
+}
+
+.book-title {
+  margin: 0px 0px 5px 0px !important;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.book-category {
+  margin: 0px 0px 5px 0px !important;
+  font-size: 10px;
+}
+
+.book-price {
+  margin: 0px !important;
+  font-size: 12px;
+  color: #FD5000;
+  font-weight: 600;
+}
+
+.book-synopsis {
+  margin: 15px 0px 0px 0px !important;
+  font-size: 12px;
+  text-align: center;
+}
+
+.separator-line {
+  background: rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 1px;
+  margin: 25px 0px;
+}
+
+.detail-area {
+  margin: 15px 0px;
+}
+
+.about-button {
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 15px;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.owner-button {
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 15px;
+  border-bottom: 3px solid rgb(255, 255, 255);
+}
+
+.active-tab {
+  border-bottom: 3px solid rgb(9, 163, 140);
+}
+
+.info-title {
+  font-size: 10px;
+  margin: 0px 0px 3px 0px !important;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.info-description {
+  font-size: 12px;
+  margin: 0px !important;
+}
+
+.info-area {
+  margin: 15px 0px;
+  padding: 12px 10px;
+  background: #F2F4F3;
+  border-radius: 10px;
+}
+
+.description-area {
+  margin: 0px;
+}
+
+.description-title {
+  margin: 20px 0px 5px 0px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.book-description {
+  margin: 0px 0px 70px 0px !important;
+  font-size: 12px;
+}
+
+.action-buttons {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0px 0px;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.action-button {
+  text-transform: capitalize !important;
+  font-weight: 700;
+}
+
+.owner-profile {
+  border-radius: 255px;
+}
+
+.book-owner {
+  margin-bottom: 60px;
+}
+
+.owner-name {
+  margin: 15px 0px 2px 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.owner-area {
+  margin: 5px 0px 2px 10px;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.owner-books {
+  margin: 5px 0px 0px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}

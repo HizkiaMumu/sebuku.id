@@ -1,0 +1,127 @@
+ion-content {
+  --ion-background-color: rgb(245, 245, 245);;
+}
+
+.product-card {
+  width: 100%;
+  height: auto;
+  padding: 10px 7px;
+  margin: 0px 0px 8px 0px;
+  background: #fff;
+}
+
+.card-header {
+  margin-bottom: 10px;
+}
+
+.owner-name {
+  margin: 0px 5px;
+  font-size: 18px;
+}
+
+.owner-location {
+  margin: 3px 5px;
+  font-size: 10px;
+}
+
+.verified-owner {
+  margin: 0px 0px -2px 3px;
+  color: rgb(15, 154, 255);
+}
+
+.checkbox-product {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.book-image {
+  width: 100%;
+  height: auto;
+  margin: 0px 5px;
+}
+
+.book-title {
+  margin: 0px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0px 5px;
+}
+
+.book-price {
+  margin: 0px;
+  font-size: 15px;
+  font-weight: 700;
+  margin: 10px 5px 0px 5px;
+  color: #FD5000;
+}
+
+.icon-button {
+  font-size: 25px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 15px 0px -8px 0px;
+}
+
+.trash-icon {
+  margin-right: 15px;
+}
+
+.quantity-order {
+  margin-top: 10px;
+}
+
+.quantity-input {
+  width: 25% !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  text-align: center;
+  display: inline-block;
+  margin: 0px;
+}
+
+.sc-ion-input-md-h {
+  --padding-start: 0px !important;
+  --padding-bottom: 3px !important;
+  --padding-top: 0px !important;
+}
+
+.native-input.sc-ion-input-md {
+  padding-top: 0px !important;
+}
+
+.order-rule {
+  font-size: 10px;
+  color: rgb(255, 23, 72);
+  margin: 10px 5px;
+}
+
+.checkout-section {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 10px;
+  background: #fff;
+  z-index: 10000;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.price-title {
+  margin: 2px 0px !important;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.total-price {
+  margin: 2px 0px !important;
+  font-size: 15px;
+  font-weight: 700;
+  color: #FD5000;
+}
+
+.white-space {
+  margin: 100px 0px;
+}
+
+.checkout-button {
+  font-weight: 700;
+  text-transform: capitalize;
+}

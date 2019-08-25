@@ -1,0 +1,54 @@
+.tab {
+  width: 100%;
+  height: auto;
+  padding: 20px 0px;
+  margin: 0px;
+  text-align: center;
+  border-bottom: 3px solid rgb(255, 255, 255);
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 700 !important;
+}
+
+.active-tab {
+  color: rgb(9, 163, 140);
+  border-bottom: 3px solid rgb(9, 163, 140);
+}
+
+.logo-area {
+  margin: 40px 0px 20px 0px;
+  text-align: center;
+}
+
+.input-text {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.input-date {
+  background: #fff !important;
+}
+
+.input-label {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 0px 0px 4px 0px;
+}
+
+.submit-button {
+  height: 50px;
+  font-weight: 900;
+}
+
+.social-button {
+  height: 50px;
+  font-weight: 900;
+}
+
+.reset-label {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  margin: 20px 0px 0px 0px;
+  font-weight: 500;
+}

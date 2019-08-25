@@ -1,4 +1,115 @@
-.welcome-card img {
-  max-height: 35vh;
-  overflow: hidden;
+ion-content {
+  --ion-background-color: rgb(252, 252, 252);
+}
+
+.section-area {
+  margin: 20px 0px;
+}
+
+.section-area .area-title .left-title {
+  float: left;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.section-area .area-title .right-title {
+  float: right;
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+.section-area .area-body {
+  width: 100%;
+  height: auto;
+  margin: 20px 0px;
+}
+
+.section-area .area-body ion-col {
+  margin: 0px !important;
+  padding: 0px 5px !important;
+}
+
+.section-area .area-body ion-slide {
+  margin: 0px !important;
+  padding: 0px !important;
+}
+
+.section-area .area-body ion-grid {
+  margin: 10px 0px !important;
+  padding: 0px !important;
+}
+
+.book-title {
+  margin: 5px 0px -5px 0px !important;
+  font-size: 12px;
+  text-align: left;
+}
+
+.book-price {
+  margin: -2px 0px 0px 0px !important;
+  font-size: 10px;
+  text-align: left;
+}
+
+.book-stars {
+  margin: 2px 0px !important;
+  text-align: left;
+}
+
+.book-star {
+  font-size: 12px !important;
+  color: #FBD334;
+  margin: 0px !important;
+}
+
+.book-title-big {
+  margin: 5px 0px !important;
+  font-size: 17px;
+  text-align: left;
+}
+
+.book-price-big {
+  margin: 0px 0px !important;
+  font-size: 13px;
+  text-align: left;
+}
+
+.book-stars-big {
+  margin: 2px 0px !important;
+  text-align: left;
+}
+
+.book-star-big {
+  font-size: 17px !important;
+  color: #FBD334;
+  margin: 0px !important;
+}
+
+.book-description-big {
+  font-size: 10px;
+  text-align: justify;
+  margin: 0px 0px 5px 0px;
+}
+
+.search-area {
+  background: rgb(54, 152, 255);
+  padding: 30px 20px 50px 20px;
+  text-align: left;
+}
+
+.search-area .search-title {
+  color: #fff;
+  font-weight: 900;
+  line-height: 40px;
+}
+
+.icon-badge {
+  font-size: 10px !important;
+  margin: -15px 10px 0px -20px;
+  border-radius: 100px;
+  background: rgb(247, 33, 65);
+  color: #fff;
+  padding: 1px 5px;
+  font-weight: 600;
+  z-index: 1000;
 }

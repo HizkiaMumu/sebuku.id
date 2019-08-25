@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 600;">Keranjang</ion-title>
+    <ion-title slot="end" style="font-size: 13px; font-weight: 500;">Hapus</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="product-card">
+    <div class="card-header">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1">
+            <ion-checkbox color="blue"></ion-checkbox>
+          </ion-col>
+          <ion-col>
+            <h4 class="owner-name">Pemilik: <span style="font-weight: 600;">Hizkia Mumu</span> <ion-icon name="checkmark-circle" class="verified-owner"></ion-icon></h4>
+            <h6 class="owner-location">Balikpapan Utara</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="card-body">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1" class="checkbox-product">
+            <ion-checkbox color="blue"></ion-checkbox>
+          </ion-col>
+          <ion-col size="4">
+            <img src="assets/images/cover-1.jpg" class="book-image">
+          </ion-col>
+          <ion-col size="7">
+            <h5 class="book-title">The subtle art of not giving a fuck</h5>
+            <h5 class="book-price">Rp 20.000 / hari</h5>
+            <div class="quantity-order">
+              <ion-icon name="trash" class="icon-button trash-icon"></ion-icon>
+              <ion-icon name="remove-circle" class="icon-button"></ion-icon>
+              <ion-input type="number" value="1" class="quantity-input"></ion-input>
+              <ion-icon name="add-circle" class="icon-button"></ion-icon>
+            </div>
+            <span class="order-rule">Min. penyewaan produk ini 3 hari.</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+  <div class="product-card">
+    <div class="card-header">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1">
+            <ion-checkbox color="blue"></ion-checkbox>
+          </ion-col>
+          <ion-col>
+            <h4 class="owner-name">Pemilik: <span style="font-weight: 600;">Kevin Setiawan</span></h4>
+            <h6 class="owner-location">Balikpapan Utara</h6>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+    <div class="card-body">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="1" class="checkbox-product">
+            <ion-checkbox color="blue"></ion-checkbox>
+          </ion-col>
+          <ion-col size="4">
+            <img src="assets/images/dilan_cover.jpg" class="book-image">
+          </ion-col>
+          <ion-col size="7">
+            <h5 class="book-title">Dilan 1991</h5>
+            <h5 class="book-price">Rp 20.000 / hari</h5>
+            <div class="quantity-order">
+              <ion-icon name="trash" class="icon-button trash-icon"></ion-icon>
+              <ion-icon name="remove-circle" class="icon-button"></ion-icon>
+              <ion-input type="number" value="1" class="quantity-input"></ion-input>
+              <ion-icon name="add-circle" class="icon-button"></ion-icon>
+            </div>
+            <span class="order-rule">Min. penyewaan produk ini 3 hari.</span>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="white-space"></div>
+
+  <div class="checkout-section">
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <h4 class="price-title">Total Harga</h4>
+          <h4 class="total-price">Rp 40.000</h4>
+        </ion-col>
+        <ion-col size="5">
+          <ion-button expand="block" shape="round" color="blue" class="checkout-button">Checkout (2)</ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>

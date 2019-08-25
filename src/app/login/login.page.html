@@ -1,0 +1,75 @@
+<ion-content>
+
+  <div class="logo-area">
+    <img src="assets/icon/logo.png" height="40px" width="auto">
+  </div>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <div class="tab login-tab" [ngClass]="this.loginSection ? 'active-tab': ''" (click)="this.showLoginSection()">
+          Login
+        </div>
+      </ion-col>
+      <ion-col>
+        <div class="tab register-tab" [ngClass]="this.registerSection ? 'active-tab': ''" (click)="this.showRegisterSection()">
+          Register
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <div *ngIf="loginSection" padding>
+    <h5 for="email" class="input-label">Email</h5>
+    <input type="text" [(ngModel)]="this.loginEmail" class="input-text">
+
+    <h5 for="password" class="input-label" style="margin-top: 10px;">Password</h5>
+    <input type="password" [(ngModel)]="this.loginPassword" class="input-text">
+
+    <ion-button expand="full" color="primary" (click)="this.loginUser()" class="submit-button" style="margin: 20px 0px 0px 0px;">LOGIN</ion-button>
+    <h5 class="reset-label">Lupa password? <span class="float-right" (click)="this.pushForgotPasswordPage()">Reset disini</span></h5>
+
+    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 20px 0px 0px 0px;">
+      <img src="assets/icon/google-icon.png" height="20px" width="auto" style="margin-right: 10px;">
+      Login with google
+    </ion-button>
+    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 10px 0px 0px 0px;">
+      <img src="assets/icon/facebook-icon.png" height="20px" width="auto" style="margin-right: 10px;">
+      Login with facebook
+    </ion-button>
+  </div>
+
+  <div *ngIf="registerSection" padding>
+    <h5 for="nama" class="input-label">Nama</h5>
+    <input type="text" [(ngModel)]="this.nama" value="" class="input-text">
+
+    <h5 for="tanggal_lahir" class="input-label" style="margin-top: 10px;">Tanggal lahir</h5>
+    <input type="date" [(ngModel)]="this.tanggal_lahir" value="" class="input-text input-date">
+
+    <h5 for="no_hp" class="input-label" style="margin-top: 10px;">No Handphone / Whatsapp</h5>
+    <input type="number" [(ngModel)]="this.no_hp" value="" class="input-text">
+
+    <h5 for="alamat_rumah" class="input-label" style="margin-top: 10px;">Alamat rumah</h5>
+    <input type="text" [(ngModel)]="this.alamat_rumah" value="" class="input-text">
+
+    <h5 for="alamat_instansi" class="input-label" style="margin-top: 10px;">Alamat instansi</h5>
+    <input type="text" [(ngModel)]="this.alamat_instansi" value="" class="input-text">
+
+    <h5 for="email" class="input-label" style="margin-top: 10px;">Email</h5>
+    <input type="text" [(ngModel)]="this.email" value="" class="input-text">
+
+    <h5 for="password" class="input-label" style="margin-top: 10px;">Password</h5>
+    <input type="password" [(ngModel)]="this.password" value="" class="input-text">
+
+    <div style="margin-top: 20px">
+      <ion-checkbox slot="start" value="pepperoni" checked></ion-checkbox>
+      <div style="font-size: 12px; margin: -23px 0px 0px 25px !important; vertical-align: middle !important;">
+        <ion-label>Saya setuju dengan syarat & ketentuan yang berlaku</ion-label>
+      </div>
+    </div>
+
+    <ion-button expand="full" color="primary" (click)="this.registerUser()" class="submit-button" style="margin: 20px 0px 0px 0px;">REGISTER</ion-button>
+    <h5 class="reset-label">Lupa password? <span class="float-right" (click)="this.pushForgotPasswordPage()">Reset disini</span></h5>
+  </div>
+
+</ion-content>
