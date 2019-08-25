@@ -53,7 +53,7 @@ export class LoginPage implements OnInit {
       password: this.loginPassword
     }
 
-    this.http.post('http://192.168.1.7:8000/api/sign-in', user).subscribe((response) => {
+    this.http.post('http://192.168.1.6:8000/api/sign-in', user).subscribe((response) => {
       this.response = response;
       this.storage.set('user', this.response.user);
       this.storage.set('token', this.response.token);
@@ -80,7 +80,7 @@ export class LoginPage implements OnInit {
       password: this.password,
     }
 
-    this.http.post('http://192.168.1.7:8000/api/sign-up', user).subscribe((response) => {
+    this.http.post('http://192.168.1.6:8000/api/sign-up', user).subscribe((response) => {
       console.log(response);
       this.showLoginSection();
       this.alertSuccess('Berhasil mendaftarkan akun, silahkan login');

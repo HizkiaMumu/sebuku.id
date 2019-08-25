@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 
-import { Platform } from '@ionic/angular';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { StatusBar } from '@ionic-native/status-bar/ngx';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Platform } from '@ionic/angular';
 import { Router } from '@angular/router';
 import { Storage } from '@ionic/storage';
 
@@ -29,7 +30,8 @@ export class AppComponent {
     private splashScreen: SplashScreen,
     private statusBar: StatusBar,
     private router: Router,
-    private storage: Storage
+    private storage: Storage,
+    private http: HttpClient
   ) {
     this.initializeApp();
   }
@@ -39,11 +41,12 @@ export class AppComponent {
       this.statusBar.styleDefault();
       this.storage.get('token').then((val) => {
         let token = val;
-        if (token != null) { // <- user sudah login
+        const headers = new HttpHeaders().set("Authorization", "Bearer " + token);
+        this.http.get('http://192.168.1.6:8000/api/check-token', {headers}).subscribe((response) => {
           this.router.navigateByUrl('/home');
-        } else { // <- user belom login
+        }, (err) => {
           this.router.navigateByUrl('/login');
-        }
+        });
       });
       this.splashScreen.hide();
     });
