@@ -24,3 +24,7 @@
   -ms-transform: translateY(-50%);
   transform: translateY(-50%);
 }
+
+img[src*="https://maps.gstatic.com/mapfiles/api-3/images/google4_hdpi.png"], .gm-style-cc {
+  display: none !important;
+}

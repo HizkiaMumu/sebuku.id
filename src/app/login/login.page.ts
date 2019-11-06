@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { Facebook, FacebookLoginResponse } from '@ionic-native/facebook/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { HttpClient } from '@angular/common/http';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
+import { NavController } from '@ionic/angular';
 import { Storage } from '@ionic/storage';
 
 @Component({
@@ -23,8 +25,9 @@ export class LoginPage implements OnInit {
   loginEmail: any;
   loginPassword: any;
   response: any;
+  loginErr: any;
 
-  constructor(private navCtrl: NavController, private http: HttpClient, public alertController: AlertController, private storage: Storage) { }
+  constructor(private navCtrl: NavController, private http: HttpClient, public alertController: AlertController, private storage: Storage, private googlePlus: GooglePlus, private fb: Facebook) { }
 
   ngOnInit() {
   }
@@ -53,7 +56,7 @@ export class LoginPage implements OnInit {
       password: this.loginPassword
     }
 
-    this.http.post('http://192.168.1.6:8000/api/sign-in', user).subscribe((response) => {
+    this.http.post('http://sebuku.livingpay.id/api/sign-in', user).subscribe((response) => {
       this.response = response;
       this.storage.set('user', this.response.user);
       this.storage.set('token', this.response.token);
@@ -62,11 +65,25 @@ export class LoginPage implements OnInit {
     }, (err) => {
       this.response = err;
       if (this.response.error.error == "invalid_credentials") {
-        console.log('email atau password yang anda masukan salah.');
+        console.log('Email atau password yang anda masukan salah.');
+        this.loginErr = 'Email atau password yang anda masukan salah.';
       } else {
         console.log('Telah terjadi kesalahan yang tidak diketahui, harap coba lagi nanti.');
+        this.loginErr = 'Telah terjadi kesalahan yang tidak diketahui, harap coba lagi nanti.';
       }
     });
+  }
+
+  googleLogin(){
+    this.googlePlus.login({})
+      .then(res => console.log(res))
+      .catch(err => console.error(err));
+  }
+
+  facebookLogin(){
+    this.fb.login(['public_profile', 'user_friends', 'email'])
+      .then((res: FacebookLoginResponse) => console.log('Logged into Facebook!', res))
+      .catch(e => console.log('Error logging into Facebook', e));
   }
 
   async registerUser(){
@@ -80,7 +97,7 @@ export class LoginPage implements OnInit {
       password: this.password,
     }
 
-    this.http.post('http://192.168.1.6:8000/api/sign-up', user).subscribe((response) => {
+    this.http.post('http://sebuku.livingpay.id/api/sign-up', user).subscribe((response) => {
       console.log(response);
       this.showLoginSection();
       this.alertSuccess('Berhasil mendaftarkan akun, silahkan login');

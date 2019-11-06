@@ -2,26 +2,35 @@ ion-content {
   --ion-background-color: rgb(245, 245, 245);;
 }
 
-.product-card {
+.transaction-card {
   width: 100%;
   height: auto;
   padding: 10px 7px;
-  margin: 0px 0px 8px 0px;
+  margin: 0px;
   background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
   margin-bottom: 10px;
 }
 
-.owner-name {
+.transaction-shipping {
   margin: 5px 5px 0px 5px;
   font-size: 12px;
 }
 
-.owner-location {
+.transaction-payment {
   margin: 3px 5px;
   font-size: 10px;
+}
+
+.unpaid {
+  color: rgb(255, 36, 36);
+}
+
+.paid {
+  color: rgb(36, 255, 38);
 }
 
 .verified-owner {
@@ -40,18 +49,22 @@ ion-content {
   margin: 0px 5px;
 }
 
-.book-title {
-  margin: 0px;
+.transaction-title {
+  width: 100% !important;
   font-size: 15px;
   font-weight: 700;
   margin: 0px 5px;
+  text-overflow: ellipsis !important;
+  overflow: hidden !important;
+  white-space: nowrap !important;
+
 }
 
-.book-price {
+.transaction-amount {
   margin: 0px;
   font-size: 15px;
   font-weight: 700;
-  margin: 10px 5px 0px 5px;
+  margin: 0px 5px 0px 5px;
   color: #FD5000;
 }
 
@@ -124,4 +137,15 @@ ion-content {
 .checkout-button {
   font-weight: 700;
   text-transform: capitalize;
+}
+
+.icon-badge {
+  font-size: 10px !important;
+  margin: -15px 10px 0px -20px;
+  border-radius: 100px;
+  background: rgb(247, 33, 65);
+  color: #fff;
+  padding: 1px 5px;
+  font-weight: 600;
+  z-index: 1000;
 }

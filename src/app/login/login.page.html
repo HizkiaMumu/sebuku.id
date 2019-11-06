@@ -20,6 +20,9 @@
   </ion-grid>
 
   <div *ngIf="loginSection" padding>
+    <div *ngIf="this.loginErr != null" class="login-err">
+      {{ this.loginErr }}
+    </div>
     <h5 for="email" class="input-label">Email</h5>
     <input type="text" [(ngModel)]="this.loginEmail" class="input-text">
 
@@ -29,11 +32,11 @@
     <ion-button expand="full" color="primary" (click)="this.loginUser()" class="submit-button" style="margin: 20px 0px 0px 0px;">LOGIN</ion-button>
     <h5 class="reset-label">Lupa password? <span class="float-right" (click)="this.pushForgotPasswordPage()">Reset disini</span></h5>
 
-    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 20px 0px 0px 0px;">
+    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 20px 0px 0px 0px;" (click)="this.googleLogin()">
       <img src="assets/icon/google-icon.png" height="20px" width="auto" style="margin-right: 10px;">
       Login with google
     </ion-button>
-    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 10px 0px 0px 0px;">
+    <ion-button expand="block" color="dark" fill="outline" class="social-button" style="margin: 10px 0px 0px 0px;" (click)="this.facebookLogin()">
       <img src="assets/icon/facebook-icon.png" height="20px" width="auto" style="margin-right: 10px;">
       Login with facebook
     </ion-button>

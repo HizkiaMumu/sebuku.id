@@ -4,10 +4,11 @@
       <ion-back-button></ion-back-button>
     </ion-buttons>
     <ion-buttons slot="end">
-      <ion-button (click)="this.pushCartPage()">
+      <ion-button (click)="this.pushCartPage()" *ngIf="!this.cartSpinner">
         <ion-icon slot="icon-only" name="ios-cart" style="font-size: 23px;"></ion-icon>
       </ion-button>
-      <span color="danger" class="icon-badge">2</span>
+      <span color="danger" class="icon-badge" *ngIf="this.cart?.length > 0 && !this.cartSpinner">{{ this.cart?.length }}</span>
+      <ion-spinner name="crescent" *ngIf="this.cartSpinner"></ion-spinner>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -16,11 +17,14 @@
 
   <div padding>
     <div class="book-area">
-      <img src="assets/images/cover-1.jpg" width="30%" height="auto" class="book-cover">
-      <h5 class="book-title">The subtle art of not giving a fuck</h5>
+      <img src="{{ this.book.book_cover }}" width="30%" height="auto" class="book-cover">
+      <h5 class="book-title">{{ this.book.book_title }}</h5>
       <h6 class="book-category">Self development</h6>
-      <h6 class="book-price">Rp 20.000 / hari</h6>
-      <p class="book-synopsis">Subtlety #1: Not giving a fuck is not about being indifferent. It just means you're comfortable with being different. Don't say fuck it to everything in life, just to the unimportant things. Subtlety #2: To not give a fuck about adversity, you must first care about something more important than adversity.</p>
+      <h6 class="book-price">{{ this.book.selling_price | currency:'Rp.' }} / hari</h6>
+      <p class="book-synopsis" *ngIf="this.slicedSynopsis">{{ this.book.book_synopsis | slice:0:300 }} ...</p>
+      <p class="book-synopsis" *ngIf="!this.slicedSynopsis">{{ this.book.book_synopsis }}</p>
+      <p class="read-more" *ngIf="this.slicedSynopsis" (click)="this.unSliceSynopsis()">Baca selengkapnya</p>
+      <p class="read-more" *ngIf="!this.slicedSynopsis" (click)="this.sliceSynopsis()">Sembunyikan</p>
     </div>
     <!-- <div class="separator-line"></div> -->
     <div class="detail-area">
@@ -84,10 +88,10 @@
     <ion-grid>
       <ion-row>
         <ion-col>
-          <ion-button color="blue" class="action-button" expand="block" fill="outline">Beli Buku</ion-button>
+          <ion-button color="blue" class="action-button" expand="block" fill="outline" [disabled]="this.cartSpinner" (click)="this.buyBook()">Beli Buku</ion-button>
         </ion-col>
         <ion-col>
-          <ion-button color="blue" class="action-button" expand="block">Sewa Buku</ion-button>
+          <ion-button color="blue" class="action-button" expand="block" [disabled]="this.cartSpinner" (click)="this.rentBook()">Sewa Buku</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>

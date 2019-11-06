@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 600;">Detail Transaction</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="product-card" *ngFor="let item of this.detailData?.items; let i = index;">
+    <div class="card-body">
+      <ion-grid>
+        <ion-row>
+          <!-- <ion-col size="1" class="checkbox-product">
+            <ion-checkbox color="blue"></ion-checkbox>
+          </ion-col> -->
+          <ion-col size="3">
+            <img src="{{ item.book.book_cover }}" class="book-image">
+          </ion-col>
+          <ion-col size="6">
+            <h5 class="book-title">{{ item.book.book_title }}</h5>
+            <h4 class="owner-name">Pemilik: <span style="font-weight: 600;">{{ item.book.user.name }}</span></h4>
+            <h6 class="owner-location">{{ item.book.user.alamat_rumah }}</h6>
+            <h5 class="book-price" *ngIf="item.transaction_type == 'rent'">{{ item.book.rental_price | currency:'Rp.' }} / hari</h5>
+            <h5 class="book-price" *ngIf="item.transaction_type == 'buy'">{{ item.book.selling_price | currency:'Rp.' }} / pcs</h5>
+          </ion-col>
+          <ion-col size="3" class="total-area">
+            <div *ngIf="item.transaction_type == 'rent'">
+              <h5 class="total-item">{{ item.total_price | currency:'Rp.' }}</h5>
+              <h5 class="item-quantity">Sewa: <span class="quantity-bold">{{ item.quantity }} hari</span></h5>
+            </div>
+            <div *ngIf="item.transaction_type == 'buy'">
+              <h5 class="total-item">{{ item.total_price | currency:'Rp.' }}</h5>
+              <h5 class="item-quantity">Beli: <span class="quantity-bold">{{ item.quantity }} pcs</span></h5>
+            </div>
+
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+
+  <div class="shipping-card">
+
+  </div>
+
+</ion-content>

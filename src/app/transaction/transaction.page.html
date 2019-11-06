@@ -1,0 +1,41 @@
+<ion-header no-border>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="text-align: center;"><img src="assets/icon/logo.png" height="23px" width="auto"></ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="this.pushCartPage()">
+        <ion-icon slot="icon-only" name="ios-cart" style="font-size: 23px;"></ion-icon>
+      </ion-button>
+      <span color="danger" class="icon-badge" *ngIf="this.cart?.length > 0">{{ this.cart?.length }}</span>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="transaction-card" *ngFor="let transaction of this.transactions" (click)="this.pushDetailTransactionPage(transaction)">
+    <div class="card-body">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="3">
+            <img src="{{ transaction.items[0].book.book_cover }}" class="book-image">
+          </ion-col>
+          <ion-col size="8">
+            <h5 class="transaction-title">
+              <span *ngFor="let item of transaction.items; let i = index"><span *ngIf="i > 0">,</span> {{ item.book.book_title }}</span>
+            </h5>
+            <h4 class="transaction-shipping">
+              Pengiriman:
+              <span style="font-weight: 600;" *ngIf="transaction.shipping_method == 'meeting_point'">Meeting Point</span>
+              <span style="font-weight: 600;" *ngIf="transaction.shipping_method == 'delivered'">Delivery</span>
+            </h4>
+            <h6 class="transaction-payment unpaid" *ngIf="transaction.status == 'pending'">Menunggu Pembayaran</h6>
+            <h6 class="transaction-payment paid" *ngIf="transaction.status == 'approved'">Telah Dibayar</h6>
+            <h5 class="transaction-amount">{{ transaction.total_price | currency:'Rp.' }}</h5>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </div>
+</ion-content>

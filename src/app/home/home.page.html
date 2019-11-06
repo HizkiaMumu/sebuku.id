@@ -8,7 +8,7 @@
       <ion-button (click)="this.pushCartPage()">
         <ion-icon slot="icon-only" name="ios-cart" style="font-size: 23px;"></ion-icon>
       </ion-button>
-      <span color="danger" class="icon-badge">2</span>
+      <span color="danger" class="icon-badge" *ngIf="this.cart?.length > 0">{{ this.cart?.length }}</span>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
@@ -40,13 +40,34 @@
       </div>
       <div class="area-body">
         <ion-slides style="width: 100% !important;">
-
-          <ion-slide>
+          <ion-grid *ngIf="this.bookSkeleton">
+            <ion-row>
+              <ion-col>
+                <div style="width: 100%; height: 120px; background: #EEEEEE;"></div>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </ion-col>
+              <ion-col>
+                <div style="width: 100%; height: 120px; background: #EEEEEE;"></div>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </ion-col>
+              <ion-col>
+                <div style="width: 100%; height: 120px; background: #EEEEEE;"></div>
+                <ion-skeleton-text animated style="width: 60%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+                <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-slide *ngFor="let books of this.books">
             <ion-grid>
               <ion-row>
-                <ion-col (click)="this.pushDetailBook()">
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
+                <ion-col *ngFor="let book of books" (click)="this.pushDetailBook(book)" size="4">
+                  <img src="{{ book.book_cover }}" width="100%" height="auto">
+                  <h5 class="book-title">{{ book.book_title }}</h5>
                   <div class="book-stars">
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
@@ -54,11 +75,11 @@
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
                   </div>
-                  <h5 class="book-price">Rp. 252.000 / pcs</h5>
+                  <h5 class="book-price">{{ book.selling_price | currency:"Rp." }} / pcs</h5>
                 </ion-col>
-                <ion-col>
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
+                <ion-col *ngFor="let book of books" (click)="this.pushDetailBook(book)" size="4">
+                  <img src="{{ book.book_cover }}" width="100%" height="auto">
+                  <h5 class="book-title">{{ book.book_title }}</h5>
                   <div class="book-stars">
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
@@ -66,11 +87,11 @@
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
                   </div>
-                  <h5 class="book-price">Rp. 22.000 / hari</h5>
+                  <h5 class="book-price">{{ book.selling_price | currency:"Rp." }} / pcs</h5>
                 </ion-col>
-                <ion-col>
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
+                <ion-col *ngFor="let book of books" (click)="this.pushDetailBook(book)" size="4">
+                  <img src="{{ book.book_cover }}" width="100%" height="auto">
+                  <h5 class="book-title">{{ book.book_title }}</h5>
                   <div class="book-stars">
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
@@ -78,50 +99,7 @@
                     <ion-icon name="star" class="book-star"></ion-icon>
                     <ion-icon name="star" class="book-star"></ion-icon>
                   </div>
-                  <h5 class="book-price">Rp. 352.000 / pcs</h5>
-                </ion-col>
-              </ion-row>
-            </ion-grid>
-          </ion-slide>
-
-          <ion-slide>
-            <ion-grid>
-              <ion-row>
-                <ion-col>
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
-                  <div class="book-stars">
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                  </div>
-                  <h5 class="book-price">Rp. 252.000</h5>
-                </ion-col>
-                <ion-col>
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
-                  <div class="book-stars">
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                  </div>
-                  <h5 class="book-price">Rp. 252.000</h5>
-                </ion-col>
-                <ion-col>
-                  <img src="assets/images/cover-1.jpg" width="100%" height="auto">
-                  <h5 class="book-title">The subtle art of not giving a fuck</h5>
-                  <div class="book-stars">
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                    <ion-icon name="star" class="book-star"></ion-icon>
-                  </div>
-                  <h5 class="book-price">Rp. 252.000</h5>
+                  <h5 class="book-price">{{ book.selling_price | currency:"Rp." }} / pcs</h5>
                 </ion-col>
               </ion-row>
             </ion-grid>

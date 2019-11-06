@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 600;">Meeting Point</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map" [class]="this.mapClass" #map></div>
+
+  <h3 class="places-title">Pilih meeting point</h3>
+  <p class="places-subtitle">Silahkan pilih tempat dibawah ini</p>
+  <ion-grid *ngIf="this.meetingPointSkeleton">
+    <ion-row>
+      <ion-col>
+        <div class="image-skeleton"></div>
+        <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      </ion-col>
+      <ion-col>
+        <div class="image-skeleton"></div>
+        <ion-skeleton-text animated style="width: 90%"></ion-skeleton-text>
+        <ion-skeleton-text animated style="width: 70%"></ion-skeleton-text>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-slides>
+    <ion-slide *ngFor="let meetingPointsData of this.meetingPoints">
+      <ion-grid>
+        <ion-row>
+          <ion-col class="place-card" *ngFor="let meetingPoint of meetingPointsData" (click)="this.selectMeetingPoint(meetingPoint)">
+            <div class="checked-area" *ngIf="this.selectedMeetingPoint?.id == meetingPoint.id">
+              <ion-icon name="checkmark" class="check-icon"></ion-icon>
+            </div>
+            <img src="{{ meetingPoint.thumbnail }}" width="100%" height="auto">
+            <h3 class="place-title">{{ meetingPoint.title }}</h3>
+            <p class="place-address">{{ meetingPoint.description }}</p>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-slide>
+  </ion-slides>
+  <ion-button expand="block" shape="round" id="nextButton" color="blue" (click)="this.createTransaction()" *ngIf="this.selectedMeetingPoint != null">Lanjutkan ke pembayaran</ion-button>
+</ion-content>

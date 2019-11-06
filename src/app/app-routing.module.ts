@@ -13,7 +13,12 @@ const routes: Routes = [
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
   { path: 'detail-book', loadChildren: './detail-book/detail-book.module#DetailBookPageModule' },
   { path: 'cart', loadChildren: './cart/cart.module#CartPageModule' },
-  { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' }
+  { path: 'forgot-password', loadChildren: './forgot-password/forgot-password.module#ForgotPasswordPageModule' },
+  { path: 'shipping-method', loadChildren: './shipping-method/shipping-method.module#ShippingMethodPageModule' },
+  { path: 'delivery', loadChildren: './delivery/delivery.module#DeliveryPageModule' },
+  { path: 'meeting-point', loadChildren: './meeting-point/meeting-point.module#MeetingPointPageModule' },
+  { path: 'transaction', loadChildren: './transaction/transaction.module#TransactionPageModule' },
+  { path: 'detail-transaction', loadChildren: './detail-transaction/detail-transaction.module#DetailTransactionPageModule' }
 ];
 
 @NgModule({

@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar color="blue">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="font-weight: 600;">Atur lokasi pegantaran</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div id="map-content">
+    <div id="map" #map></div>
+    <img src="assets/images/marker.png" height="45px" width="auto" id="marker" [class]="this.markerClass">
+  </div>
+
+  <div class="next-area">
+    <div class="textarea-padding">
+      <ion-textarea placeholder="Tambahkan catatan..." class="custom-textarea" [(ngModel)]="this.message"></ion-textarea>
+    </div>
+    <ion-button expand="block" shape="round" id="nextButton" color="blue" (click)="this.createTransaction()">Lanjutkan ke pembayaran</ion-button>
+  </div>
+
+</ion-content>
